@@ -1,0 +1,32 @@
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+
+using namespace std;
+
+int main()
+{
+    cout << "Welcome to the 3 cups game!" << endl;
+
+    srand(time(NULL));
+    while (true) {
+        int cups[3] = {0, 0, 0};
+        int drawncup = rand() % 3;
+        cups[drawncup] = 1;
+
+        int choice;
+        cout << "Under which cup is the ball (1, 2 or 3)?: ";
+        cin >> choice;
+
+        if (choice < 1 || choice > 3) {
+            cout << "You lost. The ball is under another cup." << endl;
+        } else if (cups[choice - 1] == 1) {
+            cout << "Congratulations! You found the ball!" << endl;
+            break;
+        } else {
+            cout << "You lost. The ball is under another cup. Try again." << endl;
+        }
+    }
+
+    return 0;
+}
