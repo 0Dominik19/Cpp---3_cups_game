@@ -15,15 +15,19 @@ int main()
         cups[drawncup] = 1;
 
         int choice;
+        cout << "" << endl;
         cout << "Under which cup is the ball (1, 2 or 3)?: ";
         cin >> choice;
 
         if (choice < 1 || choice > 3) {
+            cout << "" << endl;
             cout << "You lost. The ball is under another cup." << endl;
         } else if (cups[choice - 1] == 1) {
+            cout << "" << endl;
             cout << "Congratulations! You found the ball!" << endl;
             break;
         } else {
+            cout << "" << endl;
             cout << "You lost. The ball is under another cup. Try again." << endl;
         }
     }
